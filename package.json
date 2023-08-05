@@ -1,0 +1,29 @@
+{
+  "name": "gastro-guide-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node ./server.js",
+    "dev": "NODE_ENV=development nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msselizabeth/gastro-guide-backend.git"
+  },
+  "author": "Elizabeth Sheremet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msselizabeth/gastro-guide-backend/issues"
+  },
+  "homepage": "https://github.com/msselizabeth/gastro-guide-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
