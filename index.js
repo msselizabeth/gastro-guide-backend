@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 
-const continentsRouter = require("./routes/api/continents")
+const continentsRouter = require("./routes/api/continents");
+
+dotenv.config();
 
 const app = express();
 

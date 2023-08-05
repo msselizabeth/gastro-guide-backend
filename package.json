@@ -12,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/msselizabeth/gastro-guide-backend.git"
   },
-  "engines": {
-    "node": ">=14.20.1"
-  },
   "author": "Elizabeth Sheremet",
   "license": "ISC",
   "bugs": {
@@ -23,6 +20,7 @@
   "homepage": "https://github.com/msselizabeth/gastro-guide-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^7.4.2"
   },
