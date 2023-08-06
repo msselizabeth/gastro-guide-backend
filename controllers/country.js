@@ -1,4 +1,4 @@
-const { controllerWrapper } = require("../helpers");
+
 const { Country } = require("../models/country");
 
 const getCountry = async (req, res) => {
@@ -13,6 +13,4 @@ const getCountry = async (req, res) => {
 }
 
 
-module.exports = {
-    getCountry: controllerWrapper(getCountry),
-}
+module.exports = getCountry;

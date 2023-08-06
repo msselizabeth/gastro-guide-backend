@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 const continentsRouter = require("./routes/api/continents");
 const countryOfContinentRouter = require("./routes/api/countries");
+const recipesListRouter = require("./routes/api/recipes");
 const imagesRouter = require("./routes/api/images");
 
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use("/api/continents", continentsRouter);
 app.use("/api/countries", countryOfContinentRouter);
+app.use("/api/recipes", recipesListRouter);
 
 
 app.use("/api/images", imagesRouter);

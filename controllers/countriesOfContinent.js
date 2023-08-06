@@ -1,7 +1,7 @@
-const { controllerWrapper } = require("../helpers");
+
 const { Country } = require("../models/country");
 
-const getCountries = async (req, res) => {
+const getCountriesOfContinent  = async (req, res) => {
     console.log(req.params);
     // const { continent } = req.params;
     // const countries = await Country.find({ continent: continent });
@@ -13,6 +13,4 @@ const getCountries = async (req, res) => {
 }
 
 
-module.exports = {
-    getCountries: controllerWrapper(getCountries),
-}
+module.exports = getCountriesOfContinent;

@@ -1,4 +1,4 @@
-const { controllerWrapper } = require("../helpers");
+
 const { Continent } = require("../models/continent");
 
 const getContinents = async (req, res, next) => {
@@ -6,6 +6,4 @@ const getContinents = async (req, res, next) => {
         res.json(result);
 }
 
-module.exports = {
-    getContinents: controllerWrapper(getContinents),
-}
+module.exports = getContinents;
