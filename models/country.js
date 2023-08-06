@@ -7,7 +7,6 @@ const countrySchema = new Schema({
         type: Schema.Types.ObjectId,  
         ref: 'continent',                   
     },
-    continent: String,
 });
 
 const Country = model("countries", countrySchema);
