@@ -5,6 +5,7 @@ const router = express.Router();
 const ctrl = require("../../controllers");
 
 
-router.get("/:countryId", ctrl.getRecipesList);;
+router.get("/", ctrl.getRecipes);
+router.get("/:recipeId", ctrl.getRecipe);
 
 module.exports = router;

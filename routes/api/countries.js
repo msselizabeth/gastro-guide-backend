@@ -4,10 +4,8 @@ const router = express.Router();
 
 const ctrl = require("../../controllers");
 
-
-
-router.get("/:continentId", ctrl.getCountriesOfContinent);
-router.get("/:continentId/:countryId", ctrl.getCountry);
-
+router.get("/", ctrl.getCountries);
+router.get("/:countryId", ctrl.getCountry);
+router.get("/:countryId/recipes", ctrl.getCountryRecipes);
 
 module.exports = router;

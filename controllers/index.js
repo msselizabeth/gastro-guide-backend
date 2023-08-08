@@ -1,15 +1,26 @@
 const { controllerWrapper } = require("../helpers/ctrlWrapper");
 
-const getCountry = require('./country');
-const getCountriesOfContinent = require('./countriesOfContinent');
-const getContinents = require('./continents');
-const getRecipesList = require('./getRecipesList');
-
+const getCountry = require('./getCountry');
+const getCountries = require('./getCountries');
+const getContinentCountries = require('./getContinentCountries');
+const getContinents = require('./getContinents');
+const getCountryRecipes = require('./getCountryRecipes');
+const getRecipes = require('./getRecipes');
+const getRecipe = require('./getRecipe');
+const getProducts = require('./getProducts');
+const getProduct = require('./getProduct');
 
 module.exports = {
-    getCountry: controllerWrapper(getCountry),
-    getCountriesOfContinent : controllerWrapper(getCountriesOfContinent ),
     getContinents: controllerWrapper(getContinents),
-    getRecipesList: controllerWrapper(getRecipesList),
+    getContinentCountries: controllerWrapper(getContinentCountries),
 
+    getCountries: controllerWrapper(getCountries),
+    getCountry: controllerWrapper(getCountry),
+    getCountryRecipes: controllerWrapper(getCountryRecipes),
+    
+    getRecipes: controllerWrapper(getRecipes),
+    getRecipe: controllerWrapper(getRecipe),
+
+    getProducts: controllerWrapper(getProducts),
+    getProduct: controllerWrapper(getProduct),
 }

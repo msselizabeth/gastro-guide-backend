@@ -4,8 +4,10 @@ const dotenv = require("dotenv");
 
 
 const continentsRouter = require("./routes/api/continents");
-const countryOfContinentRouter = require("./routes/api/countries");
-const recipesListRouter = require("./routes/api/recipes");
+const countriesRouter = require("./routes/api/countries");
+const recipesRouter = require("./routes/api/recipes");
+const productsRouter = require("./routes/api/products");
+
 const imagesRouter = require("./routes/api/images");
 
 dotenv.config();
@@ -16,8 +18,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/continents", continentsRouter);
-app.use("/api/countries", countryOfContinentRouter);
-app.use("/api/recipes", recipesListRouter);
+app.use("/api/countries", countriesRouter);
+app.use("/api/recipes", recipesRouter);
+app.use("/api/products", productsRouter);
 
 
 app.use("/api/images", imagesRouter);

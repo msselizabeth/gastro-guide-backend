@@ -1,6 +1,6 @@
 const { Recipe } = require("../models/recipe");
 
-const getRecipesList = async (req, res) => {
+const getCountryRecipes = async (req, res) => {
     const { countryId: owner } = req.params;
     const result = await Recipe.find({owner});
     res.json(result);
@@ -8,4 +8,4 @@ const getRecipesList = async (req, res) => {
 }
 
 
-module.exports = getRecipesList;
+module.exports = getCountryRecipes;
