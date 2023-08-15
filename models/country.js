@@ -14,9 +14,9 @@ const countrySchema = new Schema({
     countryName: String,
     capitalCountry: String,
     images: {
-      mobile: imageSchema,
-      tablet: imageSchema,
-      desktop: imageSchema,
+        mobile: { imageSchema },
+        tablet: { imageSchema },
+        desktop: { imageSchema },
    },
     imageAlt: String,
     featuresCountryTitle: String,
