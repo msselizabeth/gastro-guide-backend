@@ -13,29 +13,20 @@ const imageSchema = new Schema({
 const countrySchema = new Schema({
     countryName: String,
     capitalCountry: String,
-      images: {
+    images: {
     mobile: {
-      type: imageSchema,
-      default: {
-        filejpg: '',
-        filewebp: '',
-      },
+      filejpg: String,
+      filewebp: String,
     },
     tablet: {
-      type: imageSchema,
-      default: {
-        filejpg: '',
-        filewebp: '',
-      },
+      filejpg: String,
+      filewebp: String,
     },
     desktop: {
-      type: imageSchema,
-      default: {
-        filejpg: '',
-        filewebp: '',
-      },
+      filejpg: String,
+      filewebp: String,
     },
-  },
+    },
     imageAlt: String,
     featuresCountryTitle: String,
     featuresCountry: [featureSchema],
