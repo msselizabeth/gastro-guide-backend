@@ -9,6 +9,8 @@ const getRecipes = require('./getRecipes');
 const getRecipe = require('./getRecipe');
 const getProducts = require('./getProducts');
 const getProduct = require('./getProduct');
+const registration = require('./registration');
+const login = require('./login');
 
 module.exports = {
     getContinents: controllerWrapper(getContinents),
@@ -23,4 +25,7 @@ module.exports = {
 
     getProducts: controllerWrapper(getProducts),
     getProduct: controllerWrapper(getProduct),
+
+    registration: controllerWrapper(registration),
+    login: controllerWrapper(login),
 }
