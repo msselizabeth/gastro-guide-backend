@@ -1,10 +1,40 @@
 
 const { Country } = require("../models/country");
 
-const getContinentCountries  = async (req, res) => {
+const getContinentCountriesUA  = async (req, res) => {
     const { continentId: owner } = req.params;
-    const result = await Country.find({owner} , { countryName: 1, owner: 1, imageSmall: 1, _id: 1 });
-    res.json(result);
+    const language = "ua";
+
+    const countries = await Country.find({ owner });
+
+    const result = countries.map(country => ({
+      countryName: country.countryName[language],
+      capitalCountry: country.capitalCountry[language],
+      imageAlt: country.imageAlt[language],
+      imageSmall: country.imageSmall,
+    }));
+
+   res.json(result);
 }
 
-module.exports = getContinentCountries;
+const getContinentCountriesEN = async (req, res) => {
+  const { continentId: owner } = req.params;
+  const language = "en";
+
+  const countries = await Country.find({ owner });
+
+  const result = countries.map((country) => ({
+    countryName: country.countryName[language],
+    capitalCountry: country.capitalCountry[language],
+    imageAlt: country.imageAlt[language],
+    imageSmall: country.imageSmall,
+  }));
+
+  res.json(result);
+};
+
+
+module.exports = {
+    getContinentCountriesUA,
+    getContinentCountriesEN
+};

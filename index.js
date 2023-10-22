@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 
 
 const continentsRouter = require("./routes/api/continents");
+const continentsRouterEN = require("./routes/api/continentsEN");
 const countriesRouter = require("./routes/api/countries");
 const recipesRouter = require("./routes/api/recipes");
 const productsRouter = require("./routes/api/products");
@@ -17,6 +18,7 @@ app.use(cors());
 // app.use(express.json());
 
 app.use("/api/continents", continentsRouter);
+app.use("/api/en/continents", continentsRouterEN);
 app.use("/api/countries", countriesRouter);
 app.use("/api/recipes", recipesRouter);
 app.use("/api/products", productsRouter);

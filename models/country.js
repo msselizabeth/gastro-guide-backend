@@ -1,26 +1,38 @@
 const { Schema, model } = require("mongoose");
 
-
-const featureSchema = new Schema({
-  text: String,
-});
-
-const imageSchema = new Schema({
-  filejpg: String,
-  filewebp: String,
-});
-
 const countrySchema = new Schema({
-    countryName: String,
-    capitalCountry: String,
-    imageAlt: String,
-    featuresCountryTitle: String,
-    featuresCountry: [featureSchema],
-    owner: {
-        type: Schema.Types.ObjectId,  
-        ref: 'continent',                   
+  _id: Schema.Types.ObjectId,
+  countryName: {
+    en: String,
+    ua: String,
+  },
+  capitalCountry: {
+    en: String,
+    ua: String,
+  },
+  imageAlt: {
+    en: String,
+    ua: String,
+  },
+  featuresCountryTitle: String,
+  featuresCountry: [
+    {
+      text: String,
     },
-
+  ],
+  history: [
+    {
+      text: String,
+    },
+  ],
+  seasons: [
+    {
+      text: String,
+    },
+  ],
+  owner: Schema.Types.ObjectId,
+  imageSmall: String,
+  imageHero: String,
 });
 
 const Country = model("countries", countrySchema);
