@@ -5,6 +5,6 @@ const router = express.Router();
 const ctrl = require("../../controllers");
 
 router.get("/", ctrl.getContinents);
-router.get("/:continentId/countries", ctrl.getContinentCountriesEN);
+router.get("/:path/countries", ctrl.getContinentCountriesEN);
 
 module.exports = router;

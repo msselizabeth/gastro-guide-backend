@@ -30,7 +30,7 @@ const countrySchema = new Schema({
       text: String,
     },
   ],
-  owner: Schema.Types.ObjectId,
+  owner: String,
   imageSmall: String,
   imageHero: String,
 });
