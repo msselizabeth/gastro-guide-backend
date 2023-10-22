@@ -8,6 +8,7 @@ const getContinentCountriesUA  = async (req, res) => {
     const countries = await Country.find({ owner });
 
     const result = countries.map(country => ({
+      _id: country._id,
       countryName: country.countryName[language],
       capitalCountry: country.capitalCountry[language],
       imageAlt: country.imageAlt[language],
@@ -23,12 +24,13 @@ const getContinentCountriesEN = async (req, res) => {
 
   const countries = await Country.find({ owner });
 
-  const result = countries.map((country) => ({
-    countryName: country.countryName[language],
-    capitalCountry: country.capitalCountry[language],
-    imageAlt: country.imageAlt[language],
-    imageSmall: country.imageSmall,
-  }));
+    const result = countries.map((country) => ({
+      _id: country._id,
+      countryName: country.countryName[language],
+      capitalCountry: country.capitalCountry[language],
+      imageAlt: country.imageAlt[language],
+      imageSmall: country.imageSmall,
+    }));
 
   res.json(result);
 };
