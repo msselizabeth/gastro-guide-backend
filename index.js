@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const continentsRouter = require("./routes/api/continents");
 const continentsRouterEN = require("./routes/api/continentsEN");
 const countriesRouter = require("./routes/api/countries");
+const countriesRouterEN = require("./routes/api/countriesEN");
 const recipesRouter = require("./routes/api/recipes");
 const productsRouter = require("./routes/api/products");
 const authRouter = require("./routes/api/auth");
@@ -20,6 +21,7 @@ app.use(cors());
 app.use("/api/continents", continentsRouter);
 app.use("/api/en/continents", continentsRouterEN);
 app.use("/api/countries", countriesRouter);
+app.use("/api/en/countries", countriesRouterEN);
 app.use("/api/recipes", recipesRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/auth", authRouter);
@@ -43,4 +45,4 @@ app.use((err, req, res, next) => {
 
 
 module.exports = app;
-// app.listen(3003, () => { console.log("server running") });
+

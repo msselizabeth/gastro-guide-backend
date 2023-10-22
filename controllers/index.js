@@ -1,6 +1,6 @@
 const { controllerWrapper } = require("../helpers/ctrlWrapper");
 
-const getCountry = require('./getCountry');
+const { getCountryUA, getCountryEN } = require('./getCountry');
 const getCountries = require('./getCountries');
 const { getContinentCountriesUA, getContinentCountriesEN} = require('./getContinentCountries');
 const getContinents = require('./getContinents');
@@ -18,7 +18,8 @@ module.exports = {
     getContinentCountriesEN: controllerWrapper(getContinentCountriesEN),
 
     getCountries: controllerWrapper(getCountries),
-    getCountry: controllerWrapper(getCountry),
+    getCountryUA: controllerWrapper(getCountryUA),
+    getCountryEN: controllerWrapper(getCountryEN),
     getCountryRecipes: controllerWrapper(getCountryRecipes),
     
     getRecipes: controllerWrapper(getRecipes),

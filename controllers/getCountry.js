@@ -1,11 +1,49 @@
 
 const { Country } = require("../models/country");
 
-const getCountry = async (req, res) => {
+const getCountryUA = async (req, res) => {
     const { countryId } = req.params;
-    const result = await Country.findById(countryId);
-    res.json(result);
+    const language = "ua";
+
+    const country = await Country.findById(countryId);
+   
+     const result = {
+       _id: country._id,
+       countryName: country.countryName[language],
+       capitalCountry: country.capitalCountry[language],
+       imageAlt: country.imageAlt[language],
+       imageSmall: country.imageSmall,
+       imageHero: country.imageHero,
+       featuresCountryTitle: country.featuresCountryTitle[language],
+       featuresCountry: country.featuresCountry[language]
+     };
+
+     res.json(result);
 }
 
+const getCountryEN = async (req, res) => {
+  const { countryId } = req.params;
+  const language = "en";
 
-module.exports = getCountry;
+  const country = await Country.findById(countryId);
+
+  const result = {
+    _id: country._id,
+    countryName: country.countryName[language],
+    capitalCountry: country.capitalCountry[language],
+    imageAlt: country.imageAlt[language],
+    imageSmall: country.imageSmall,
+    imageHero: country.imageHero,
+    featuresCountryTitle: country.featuresCountryTitle[language],
+    featuresCountry: country.featuresCountry[language],
+  };
+
+  res.json(result);
+};
+
+
+
+module.exports = {
+  getCountryUA,
+  getCountryEN,
+};

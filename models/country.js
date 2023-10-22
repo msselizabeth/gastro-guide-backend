@@ -14,20 +14,28 @@ const countrySchema = new Schema({
     en: String,
     ua: String,
   },
-  featuresCountryTitle: String,
-  featuresCountry: [
-    {
-      text: String,
-    },
-  ],
+  featuresCountryTitle: {
+    en: String,
+    ua: String,
+  },
+  featuresCountry: {
+    en: [{ text: String }],
+    ua: [{ text: String }],
+  },
   history: [
     {
-      text: String,
+      text: {
+        en: String,
+        ua: String,
+      },
     },
   ],
   seasons: [
     {
-      text: String,
+      text: {
+        en: String,
+        ua: String,
+      },
     },
   ],
   owner: String,
