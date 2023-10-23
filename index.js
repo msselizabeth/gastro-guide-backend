@@ -18,9 +18,9 @@ const app = express();
 app.use(cors());
 // app.use(express.json());
 
-app.use("/api/continents", continentsRouter);
+app.use("/api/ua/continents", continentsRouter);
 app.use("/api/en/continents", continentsRouterEN);
-app.use("/api/countries", countriesRouter);
+app.use("/api/ua/countries", countriesRouter);
 app.use("/api/en/countries", countriesRouterEN);
 app.use("/api/recipes", recipesRouter);
 app.use("/api/products", productsRouter);
