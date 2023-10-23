@@ -15,7 +15,9 @@ const getCountryUA = async (req, res) => {
        imageSmall: country.imageSmall,
        imageHero: country.imageHero,
        featuresCountryTitle: country.featuresCountryTitle[language],
-       featuresCountry: country.featuresCountry[language]
+       featuresCountry: country.featuresCountry[language],
+       history: country.history[language],
+       seasons: country.seasons[language],
      };
 
      res.json(result);
@@ -36,6 +38,8 @@ const getCountryEN = async (req, res) => {
     imageHero: country.imageHero,
     featuresCountryTitle: country.featuresCountryTitle[language],
     featuresCountry: country.featuresCountry[language],
+    history: country.history[language],
+    seasons: country.seasons[language],
   };
 
   res.json(result);

@@ -22,22 +22,14 @@ const countrySchema = new Schema({
     en: [{ text: String }],
     ua: [{ text: String }],
   },
-  history: [
-    {
-      text: {
-        en: String,
-        ua: String,
-      },
-    },
-  ],
-  seasons: [
-    {
-      text: {
-        en: String,
-        ua: String,
-      },
-    },
-  ],
+  history: {
+    en: [{ text: String }],
+    ua: [{ text: String }],
+  },
+  seasons: {
+    en: [{ text: String }],
+    ua: [{ text: String }],
+  },
   owner: String,
   imageSmall: String,
   imageHero: String,
