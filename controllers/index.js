@@ -2,9 +2,12 @@ const { controllerWrapper } = require("../helpers/ctrlWrapper");
 
 const { getCountryUA, getCountryEN } = require('./getCountry');
 const getCountries = require('./getCountries');
-const { getContinentCountriesUA, getContinentCountriesEN} = require('./getContinentCountries');
+const { getContinentCountriesUA, getContinentCountriesEN }= require('./getContinentCountries');
 const getContinents = require('./getContinents');
-const getCountryRecipes = require('./getCountryRecipes');
+const {
+  getCountryRecipesUA,
+  getCountryRecipesEN,
+} = require("./getCountryRecipes");
 const getRecipes = require('./getRecipes');
 const getRecipe = require('./getRecipe');
 const getProducts = require('./getProducts');
@@ -13,21 +16,22 @@ const registration = require('./registration');
 const login = require('./login');
 
 module.exports = {
-    getContinents: controllerWrapper(getContinents),
-    getContinentCountriesUA: controllerWrapper(getContinentCountriesUA),
-    getContinentCountriesEN: controllerWrapper(getContinentCountriesEN),
+  getContinents: controllerWrapper(getContinents),
+  getContinentCountriesUA: controllerWrapper(getContinentCountriesUA),
+  getContinentCountriesEN: controllerWrapper(getContinentCountriesEN),
 
-    getCountries: controllerWrapper(getCountries),
-    getCountryUA: controllerWrapper(getCountryUA),
-    getCountryEN: controllerWrapper(getCountryEN),
-    getCountryRecipes: controllerWrapper(getCountryRecipes),
-    
-    getRecipes: controllerWrapper(getRecipes),
-    getRecipe: controllerWrapper(getRecipe),
+  getCountries: controllerWrapper(getCountries),
+  getCountryUA: controllerWrapper(getCountryUA),
+  getCountryEN: controllerWrapper(getCountryEN),
+  getCountryRecipesUA: controllerWrapper(getCountryRecipesUA),
+  getCountryRecipesEN: controllerWrapper(getCountryRecipesEN),
 
-    getProducts: controllerWrapper(getProducts),
-    getProduct: controllerWrapper(getProduct),
+  getRecipes: controllerWrapper(getRecipes),
+  getRecipe: controllerWrapper(getRecipe),
 
-    registration: controllerWrapper(registration),
-    login: controllerWrapper(login),
-}
+  getProducts: controllerWrapper(getProducts),
+  getProduct: controllerWrapper(getProduct),
+
+  registration: controllerWrapper(registration),
+  login: controllerWrapper(login),
+};
