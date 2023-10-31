@@ -1,8 +1,47 @@
 const { Recipe } = require("../models/recipe");
 
-const getRecipes = async (req, res) => {
-        const result = await Recipe.find();
-        res.json(result);
+const getRecipesUA = async (req, res) => {
+        const { page = 1, limit = 20 } = req.query;
+        const skip = (page - 1) * limit;
+        const totalCount = await Recipe.countDocuments();
+        const totalPages = Math.ceil(totalCount / limit);
+        const language = "ua";
+        const recipes = await Recipe.find({}, "", { skip, limit });
+        const result = recipes.map((recipe) => ({
+          _id: recipe._id,
+          recipeName: recipe.recipeName[language],
+          recipeImgAlt: recipe.recipeImgAlt[language],
+          recipeImgSmall: recipe.recipeImgSmall,
+        }));
+        res.json({
+          totalPages,
+          currentPage: page,
+          result,
+        });
 }
 
-module.exports = getRecipes;
+const getRecipesEN = async (req, res) => {
+  const { page = 1, limit = 20 } = req.query;
+  const skip = (page - 1) * limit;
+  const totalCount = await Recipe.countDocuments();
+  const totalPages = Math.ceil(totalCount / limit);
+  const language = "en";
+  const recipes = await Recipe.find({}, "", { skip, limit });
+  const result = recipes.map((recipe) => ({
+    _id: recipe._id,
+    recipeName: recipe.recipeName[language],
+    recipeImgAlt: recipe.recipeImgAlt[language],
+    recipeImgSmall: recipe.recipeImgSmall,
+  }));
+  res.json({
+    totalPages,
+    currentPage: page,
+    result,
+  });
+};
+
+
+module.exports = {
+        getRecipesUA,
+        getRecipesEN
+};

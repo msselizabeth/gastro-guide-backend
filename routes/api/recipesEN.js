@@ -4,8 +4,7 @@ const router = express.Router();
 
 const ctrl = require("../../controllers");
 
-
-router.get("/", ctrl.getRecipesUA);
-router.get("/:recipeId", ctrl.getRecipeUA);
+router.get("/", ctrl.getRecipesEN);
+router.get("/:recipeId", ctrl.getRecipeEN);
 
 module.exports = router;

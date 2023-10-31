@@ -1,9 +1,45 @@
 const { Recipe } = require("../models/recipe");
 
-const getRecipe = async (req, res) => {
+const getRecipeUA = async (req, res) => {
     const { recipeId } = req.params;
-    const result = await Recipe.findById(recipeId);
-    res.json(result);
+    const language = "ua";
+    const recipe = await Recipe.findById(recipeId);
+      const result = {
+        _id: recipe._id,
+        recipeName: recipe.recipeName[language],
+        recipeImgAlt: recipe.recipeImgAlt[language],
+        recipeImgSmall: recipe.recipeImgSmall,
+        recipeImgHero: recipe.recipeImgHero,
+        featuresDish: recipe.featuresDish[language],
+        recipe: recipe.recipe[language],
+        cookTechnology: recipe.cookTechnology[language],
+        nutritionalValues: recipe.nutritionalValues[language],
+      };
+
+      res.json(result);
 }
 
-module.exports = getRecipe;
+const getRecipeEN = async (req, res) => {
+  const { recipeId } = req.params;
+  const language = "en";
+  const recipe = await Recipe.findById(recipeId);
+  const result = {
+    _id: recipe._id,
+    recipeName: recipe.recipeName[language],
+    recipeImgAlt: recipe.recipeImgAlt[language],
+    recipeImgSmall: recipe.recipeImgSmall,
+    recipeImgHero: recipe.recipeImgHero,
+    featuresDish: recipe.featuresDish[language],
+    recipe: recipe.recipe[language],
+    cookTechnology: recipe.cookTechnology[language],
+    nutritionalValues: recipe.nutritionalValues[language],
+  };
+
+  res.json(result);
+};
+
+
+module.exports = {
+    getRecipeUA,
+    getRecipeEN
+};
