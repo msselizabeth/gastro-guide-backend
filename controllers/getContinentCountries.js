@@ -10,7 +10,6 @@ const getContinentCountriesUA  = async (req, res) => {
     const result = countries.map(country => ({
       _id: country._id,
       countryName: country.countryName[language],
-      capitalCountry: country.capitalCountry[language],
       imageAlt: country.imageAlt[language],
       imageSmall: country.imageSmall,
     }));
@@ -27,7 +26,6 @@ const getContinentCountriesEN = async (req, res) => {
     const result = countries.map((country) => ({
       _id: country._id,
       countryName: country.countryName[language],
-      capitalCountry: country.capitalCountry[language],
       imageAlt: country.imageAlt[language],
       imageSmall: country.imageSmall,
     }));
