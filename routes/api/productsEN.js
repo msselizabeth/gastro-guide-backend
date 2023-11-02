@@ -4,8 +4,7 @@ const router = express.Router();
 
 const ctrl = require("../../controllers");
 
-
-router.get("/", ctrl.getProductsUA);
-router.get("/:productId", ctrl.getProductUA);
+router.get("/", ctrl.getProductsEN);
+router.get("/:productId", ctrl.getProductEN);
 
 module.exports = router;

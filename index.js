@@ -9,7 +9,8 @@ const countriesRouterUA = require("./routes/api/countries");
 const countriesRouterEN = require("./routes/api/countriesEN");
 const recipesRouterUA = require("./routes/api/recipes");
 const recipesRouterEN = require("./routes/api/recipesEN");
-const productsRouter = require("./routes/api/products");
+const productsRouterUA = require("./routes/api/products");
+const productsRouterEN = require("./routes/api/productsEN");
 const authRouter = require("./routes/api/auth");
 
 dotenv.config();
@@ -25,7 +26,8 @@ app.use("/api/ua/countries", countriesRouterUA);
 app.use("/api/en/countries", countriesRouterEN);
 app.use("/api/ua/recipes", recipesRouterUA);
 app.use("/api/en/recipes", recipesRouterEN);
-app.use("/api/products", productsRouter);
+app.use("/api/ua/products", productsRouterUA);
+app.use("/api/en/products", productsRouterEN);
 app.use("/api/auth", authRouter);
 
 

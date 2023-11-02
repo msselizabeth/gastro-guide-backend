@@ -10,8 +10,8 @@ const {
 } = require("./getCountryRecipes");
 const { getRecipesUA, getRecipesEN } = require("./getRecipes");
 const { getRecipeUA, getRecipeEN } = require("./getRecipe");
-const getProducts = require('./getProducts');
-const getProduct = require('./getProduct');
+const { getProductsUA , getProductsEN} = require("./getProducts");
+const { getProductUA , getProductEN} = require("./getProduct");
 const registration = require('./registration');
 const login = require('./login');
 
@@ -32,8 +32,10 @@ module.exports = {
   getRecipeUA: controllerWrapper(getRecipeUA),
   getRecipeEN: controllerWrapper(getRecipeEN),
 
-  getProducts: controllerWrapper(getProducts),
-  getProduct: controllerWrapper(getProduct),
+  getProductsUA: controllerWrapper(getProductsUA),
+  getProductsEN: controllerWrapper(getProductsEN),
+  getProductUA: controllerWrapper(getProductUA),
+  getProductEN: controllerWrapper(getProductEN),
 
   registration: controllerWrapper(registration),
   login: controllerWrapper(login),
