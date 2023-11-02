@@ -52,6 +52,7 @@ const recipeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "countries",
   },
+  category: String,
 });
 
 const Recipe = model("recipes", recipeSchema);
