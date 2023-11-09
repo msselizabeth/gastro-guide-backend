@@ -10,7 +10,6 @@ const postComment = async (req, res) => {
     const comment = new Comment({
         text,
         author: user.id,
-        authorName: user.userName,
         recipe,
     })
     await comment.save();

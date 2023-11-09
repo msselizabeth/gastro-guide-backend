@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const { SECRET_KEY } = process.env;
 
-const loginUA = async (req, res) => {
+const login = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
      if (!user) {
@@ -26,21 +26,20 @@ const loginUA = async (req, res) => {
     res.json({ message: "Login success", token});
 };
 
-const loginEN = async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (!user) {
-    throw HttpError(401, "Email or password invalid");
-  }
-  const passwordCompare = await bcrypt.compare(password, user.password);
-  if (!passwordCompare) {
-    throw HttpError(401, "Email or password invalid");
-  }
+// const loginEN = async (req, res) => {
+//   const { email, password } = req.body;
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     throw HttpError(401, "Email or password invalid");
+//   }
+//   const passwordCompare = await bcrypt.compare(password, user.password);
+//   if (!passwordCompare) {
+//     throw HttpError(401, "Email or password invalid");
+//   }
 
-  res.json({ message: "Login success" });
-};
+//   res.json({ message: "Login success" });
+// };
 
 module.exports = {
-  loginEN,
-  loginUA
+  login,
 };
