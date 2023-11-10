@@ -18,6 +18,8 @@ const { postComment } = require("./postComment");
 const { getComments } = require("./getComments");
 const { current } = require("./current");
 const { logout } = require("./logout");
+const { confirmEmail } = require("./confirm");
+const { resentVerifyEmail } = require("./resentVerifyEmail");
 
 module.exports = {
   getContinents: controllerWrapper(getContinents),
@@ -46,5 +48,7 @@ module.exports = {
   postComment: controllerWrapper(postComment),
   getComments: controllerWrapper(getComments),
   current: controllerWrapper(current),
-  logout: controllerWrapper(logout)
+  logout: controllerWrapper(logout),
+  confirm: controllerWrapper(confirmEmail),
+  resentVerifyEmail: controllerWrapper(resentVerifyEmail),
 };
