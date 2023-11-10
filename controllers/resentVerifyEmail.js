@@ -13,7 +13,7 @@ const resentVerifyEmail = async (req, res) => {
     }
     const emailMessage = {
       to: email,
-      html: `<a target="_blank" href="https://gastro-guide-cb84aa2b2322.herokuapp.com/api/auth/verify/${verificationCode}">Click to verify email</a>`,
+      html: `<a target="_blank" href="https://gastro-guide-cb84aa2b2322.herokuapp.com/api/auth/verify/${user.verificationCode}">Click to verify email</a>`,
     };
 
     registrationMail(emailMessage).catch(console.error);
