@@ -20,6 +20,8 @@ const { current } = require("./current");
 const { logout } = require("./logout");
 const { confirmEmail } = require("./confirm");
 const { resentVerifyEmail } = require("./resentVerifyEmail");
+const { supportHelpMail } = require("./supportMail");
+
 
 module.exports = {
   getContinents: controllerWrapper(getContinents),
@@ -51,4 +53,5 @@ module.exports = {
   logout: controllerWrapper(logout),
   confirm: controllerWrapper(confirmEmail),
   resentVerifyEmail: controllerWrapper(resentVerifyEmail),
+  supportHelpMail: controllerWrapper(supportHelpMail),
 };

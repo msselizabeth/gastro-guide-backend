@@ -13,5 +13,6 @@ router.get("/current", authenticate, jsonParse, ctrl.current);
 router.post("/logout", authenticate, jsonParse, ctrl.logout);
 router.get("/verify/:code", jsonParse, ctrl.confirm);
 router.post("/verify", jsonParse, ctrl.resentVerifyEmail);
+router.post("/help", jsonParse, ctrl.supportHelpMail);
 
 module.exports = router;

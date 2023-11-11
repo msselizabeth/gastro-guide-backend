@@ -23,6 +23,18 @@ async function registrationMail(emailMessage) {
     html: emailMessage.html,
   });
 }
+
+async function supportMail(user, message) {
+    await transporter.sendMail({
+      from: "gastroguide@ukr.net",
+      to: "gastroguide@ukr.net",
+      subject: "Support Mail",
+        html: `<p>From: ${user}</p>
+      <p>Problem: ${message}</p>`
+    });
+    
+}
 module.exports = {
     registrationMail,
+    supportMail
 }
