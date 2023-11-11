@@ -5,7 +5,7 @@ const supportHelpMail = async (req, res) => {
     const { email, message } = req.body;
     
     if (!email || !message) {
-        throw HttpError(401, "Email or message doesn't exist")
+        throw HttpError(400, "Email or message doesn't exist")
     }
 
   supportMail(email, message).catch(console.error);
