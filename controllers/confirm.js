@@ -15,7 +15,7 @@ const confirmEmail = async (req, res) => {
     return res.status(400).json({ message: "Invalid or expired email." });
   }
   // Отправка HTML-страницы с благодарностью за регистрацию
-  res.sendFile(path.join(__dirname, "../helpers/confirm.html"));
+  res.sendFile(path.join(__dirname, "../verify/confirm.html"));
 };
 
 module.exports = { confirmEmail };

@@ -1,0 +1,12 @@
+body{
+    color: rgb(90, 3, 25);
+    background-image: url("./food-fon.png");
+    background-color: rgba(245, 242, 142, 0.15);
+    font-family: 'Montserrat' sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 900;
+    font-family: 'Montserrat Alternates' sans-serif;
+}
