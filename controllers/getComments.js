@@ -11,8 +11,8 @@ const getComments = async (req, res) => {
     "author",
     "userName email createdAt"
   );
-  const sortedComments = comments.sort((a, b) => a.createdAt - b.createdAt);
-  
+  const sortedComments = comments.sort((a, b) => b.createdAt - a.createdAt);
+
   res.status(200).json({
     sortedComments,
     totalPages,
