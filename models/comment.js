@@ -10,7 +10,6 @@ const commentSchema = new Schema({
         ref: "user",
         required: true
     },
-    authorName: String,
     recipe: {
         type: Schema.Types.ObjectId,
         ref: "recipes",
