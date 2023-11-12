@@ -16,8 +16,6 @@ const confirmEmail = async (req, res) => {
   }
   // Отправка HTML-страницы с благодарностью за регистрацию
   res.sendFile(path.join(__dirname, "../verify/confirm.html"));
-  res.sendFile(path.join(__dirname, "../verify/confirm.css"));
-  res.sendFile(path.join(__dirname, "../verify/food-fon.png"));
 };
 
 module.exports = { confirmEmail };
