@@ -15,6 +15,7 @@ const getRecipeUA = async (req, res) => {
         cookTechnology: recipe.cookTechnology[language],
         nutritionalValues: recipe.nutritionalValues[language],
         category: recipe.category,
+        stepsRecipe: recipe.stepsRecipe[language],
       };
 
       res.json(result);
@@ -35,6 +36,7 @@ const getRecipeEN = async (req, res) => {
     cookTechnology: recipe.cookTechnology[language],
     nutritionalValues: recipe.nutritionalValues[language],
     category: recipe.category,
+    stepsRecipe: recipe.stepsRecipe[language],
   };
 
   res.json(result);

@@ -48,6 +48,20 @@ const recipeSchema = new Schema({
       },
     ],
   },
+  stepsRecipe: {
+    en: [
+      {
+        title: String,
+        text: String,
+      },
+    ],
+    ua: [
+      {
+        title: String,
+        text: String,
+      },
+    ],
+  },
   owner: {
     type: Schema.Types.ObjectId,
     ref: "countries",
