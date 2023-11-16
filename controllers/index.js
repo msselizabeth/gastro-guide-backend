@@ -22,7 +22,7 @@ const { confirmEmail } = require("./confirm");
 const { resentVerifyEmail } = require("./resentVerifyEmail");
 const { supportHelpMail } = require("./supportMail");
 const { postPortrait } = require("./postPortrait");
-const { getPortrait } = require("./getPortrait");
+const { getPortraitUA, getPortraitEN } = require("./getPortrait");
 
 
 module.exports = {
@@ -58,5 +58,6 @@ module.exports = {
   supportHelpMail: controllerWrapper(supportHelpMail),
 
   postPortrait: controllerWrapper(postPortrait),
-  getPortrait: controllerWrapper(getPortrait)
+  getPortraitUA: controllerWrapper(getPortraitUA),
+  getPortraitEN: controllerWrapper(getPortraitEN),
 };

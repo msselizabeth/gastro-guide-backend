@@ -7,6 +7,7 @@ const authenticate = require("../../middlewares/authenticate");
 const jsonParse = express.json();
 
 router.post("/addPortrait", authenticate, jsonParse, ctrl.postPortrait);
-router.get("/portrait", authenticate, jsonParse, ctrl.getPortrait);
+router.get("/ua/portrait", authenticate, jsonParse, ctrl.getPortraitUA);
+router.get("/en/portrait", authenticate, jsonParse, ctrl.getPortraitEN);
 
 module.exports = router;
