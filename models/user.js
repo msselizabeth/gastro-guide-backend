@@ -27,10 +27,28 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    portrait: {
+      cuisine: {
+        type: Array,
+        default: [],
+      },
+      categories: {
+        type: Array,
+        default: [],
+      },
+      cookingMethods: {
+        type: Array,
+        default: [],
+      },
+      allergies: {
+        type: Array,
+        default: [],
+      },
+    },
     verificationCode: {
       type: String,
       default: "",
-    }
+    },
   },
   { versionKey: false, timestamps: true }
 );

@@ -67,6 +67,10 @@ const recipeSchema = new Schema({
     ref: "countries",
   },
   category: String,
+  cuisine: [],
+  categories: [],
+  cookingMethods: [],
+  allergies: [],
 });
 
 const Recipe = model("recipes", recipeSchema);

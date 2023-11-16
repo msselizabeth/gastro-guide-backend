@@ -13,6 +13,7 @@ const productsRouterUA = require("./routes/api/products");
 const productsRouterEN = require("./routes/api/productsEN");
 const authRouter = require("./routes/api/auth");
 const commentRouter = require("./routes/api/comment");
+const userRouter = require("./routes/api/userRequests");
 dotenv.config();
 
 const app = express();
@@ -29,6 +30,7 @@ app.use("/api/ua/products", productsRouterUA);
 app.use("/api/en/products", productsRouterEN);
 app.use("/api/auth", authRouter);
 app.use("/api/comments", commentRouter);
+app.use("/api/user", userRouter);
 
 
 app.use((req, res) => {

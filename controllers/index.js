@@ -21,6 +21,8 @@ const { logout } = require("./logout");
 const { confirmEmail } = require("./confirm");
 const { resentVerifyEmail } = require("./resentVerifyEmail");
 const { supportHelpMail } = require("./supportMail");
+const { postPortrait } = require("./postPortrait");
+const { getPortrait } = require("./getPortrait");
 
 
 module.exports = {
@@ -54,4 +56,7 @@ module.exports = {
   confirm: controllerWrapper(confirmEmail),
   resentVerifyEmail: controllerWrapper(resentVerifyEmail),
   supportHelpMail: controllerWrapper(supportHelpMail),
+
+  postPortrait: controllerWrapper(postPortrait),
+  getPortrait: controllerWrapper(getPortrait)
 };
