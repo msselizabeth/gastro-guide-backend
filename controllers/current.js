@@ -3,7 +3,8 @@ const current = async (req, res) => {
     res.json({
         userName,
         email,
-        portrait
+        portrait,
+        favorites
     })
 }
 
