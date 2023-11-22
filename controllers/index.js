@@ -25,7 +25,7 @@ const { postPortrait } = require("./postPortrait");
 const { getPortraitUA, getPortraitEN } = require("./getPortrait");
 const { postFavorites } = require("./postFavorites");
 const { deleteFavorites } = require("./deleteFavotites");
-const { getFavoritesUA } = require("./getFavorites");
+const { getFavoritesUA, getFavoritesEN } = require("./getFavorites");
 
 
 module.exports = {
@@ -65,5 +65,6 @@ module.exports = {
   getPortraitEN: controllerWrapper(getPortraitEN),
   postFavorites: controllerWrapper(postFavorites),
   deleteFavotites: controllerWrapper(deleteFavorites),
-  getFavoritesUA: controllerWrapper(getFavoritesUA)
+  getFavoritesUA: controllerWrapper(getFavoritesUA),
+  getFavoritesEN: controllerWrapper(getFavoritesEN),
 };
