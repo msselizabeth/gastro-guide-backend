@@ -23,6 +23,9 @@ const { resentVerifyEmail } = require("./resentVerifyEmail");
 const { supportHelpMail } = require("./supportMail");
 const { postPortrait } = require("./postPortrait");
 const { getPortraitUA, getPortraitEN } = require("./getPortrait");
+const { postFavorites } = require("./postFavorites");
+const { deleteFavorites } = require("./deleteFavotites");
+const { getFavoritesUA } = require("./getFavorites");
 
 
 module.exports = {
@@ -60,4 +63,7 @@ module.exports = {
   postPortrait: controllerWrapper(postPortrait),
   getPortraitUA: controllerWrapper(getPortraitUA),
   getPortraitEN: controllerWrapper(getPortraitEN),
+  postFavorites: controllerWrapper(postFavorites),
+  deleteFavotites: controllerWrapper(deleteFavorites),
+  getFavoritesUA: controllerWrapper(getFavoritesUA)
 };

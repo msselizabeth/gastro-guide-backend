@@ -45,6 +45,7 @@ const userSchema = new Schema(
         default: [],
       },
     },
+    favorites: [String],
     verificationCode: {
       type: String,
       default: "",
