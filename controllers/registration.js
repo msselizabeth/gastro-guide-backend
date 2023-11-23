@@ -3,6 +3,7 @@ const { HttpError } = require("../helpers");
 const bcrypt = require("bcrypt");
 const { registrationMail } = require("../nodemailer");
 const { nanoid } = require("nanoid");
+const { valid } = require("joi");
 
 
 const registration = async (req, res) => {
@@ -11,6 +12,14 @@ const registration = async (req, res) => {
     if (user) {
         throw HttpError(409, "Email has already been use.");
     }
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    if (!isValidEmail(email)) {
+        throw HttpError(409, "Email is invalid.");
+    }
+
 
     const hashPassword = await bcrypt.hash(password, 10);
     const verificationCode = nanoid();
