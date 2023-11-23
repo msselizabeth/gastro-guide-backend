@@ -71,10 +71,11 @@ const recipeSchema = new Schema({
   categories: [],
   cookingMethods: [],
   allergies: [],
-  level: {
+  filterLevel: {
     en: String,
     ua: String
-  }
+  },
+  filterCategory: String,
 });
 
 const Recipe = model("recipes", recipeSchema);
