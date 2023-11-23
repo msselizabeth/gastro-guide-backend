@@ -12,7 +12,7 @@ const getRecipesUA = async (req, res) => {
           recipeName: recipe.recipeName[language],
           recipeImgAlt: recipe.recipeImgAlt[language],
           recipeImgSmall: recipe.recipeImgSmall,
-          filterLevel: recipe.filterLevel[language],
+          filterLevel: recipe.filterLevel,
           filterCategory: recipe.filterCategory,
         }));
         res.json({

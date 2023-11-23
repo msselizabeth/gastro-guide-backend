@@ -71,10 +71,7 @@ const recipeSchema = new Schema({
   categories: [],
   cookingMethods: [],
   allergies: [],
-  filterLevel: {
-    en: String,
-    ua: String
-  },
+  filterLevel: String,
   filterCategory: String,
 });
 
