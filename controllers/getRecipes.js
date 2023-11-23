@@ -12,7 +12,8 @@ const getRecipesUA = async (req, res) => {
           recipeName: recipe.recipeName[language],
           recipeImgAlt: recipe.recipeImgAlt[language],
           recipeImgSmall: recipe.recipeImgSmall,
-          level: recipe.level[language],
+          filterLevel: recipe.filterLevel[language],
+          filterCategory: recipe.filterCategory,
         }));
         res.json({
           totalPages,
