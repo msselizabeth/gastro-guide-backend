@@ -71,6 +71,10 @@ const recipeSchema = new Schema({
   categories: [],
   cookingMethods: [],
   allergies: [],
+  level: {
+    en: String,
+    ua: String
+  }
 });
 
 const Recipe = model("recipes", recipeSchema);
