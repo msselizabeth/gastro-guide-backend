@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: My API
+  version: 1.0.0
+paths:
+  /uk/continents/{continentId}/products:
+    post:
+      summary: Add a Product to a Continent (UK)
+      description: Endpoint for adding a new product to a continent in the UK.
+      parameters:
+        - name: continentId
+          in: path
+          required: true
+          description: The ID of the continent.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                productName:
+                  type: string
+                  description: The name of the product.
+                description:
+                  type: string
+                  description: The description of the product.
+                photo:
+                  type: string
+                  format: binary
+                  description: The photo of the product.
+      responses:
+        '200':
+          description: Product added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Product added successfully
+                  updatedContinent:
+                    type: object
+                    description: The updated continent object.
+        '400':
+          description: Bad request.
+        '404':
+          description: Continent not found.
+        '500':
+          description: Internal server error.
+  /en/continents/{continentId}/products:
+    post:
+      summary: Add a Product to a Continent (EN)
+      description: Endpoint for adding a new product to a continent in English-speaking countries.
+      parameters:
+        - name: continentId
+          in: path
+          required: true
+          description: The ID of the continent.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                productName:
+                  type: string
+                  description: The name of the product.
+                description:
+                  type: string
+                  description: The description of the product.
+                photo:
+                  type: string
+                  format: binary
+                  description: The photo of the product.
+      responses:
+        '200':
+          description: Product added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Product added successfully
+                  updatedContinent:
+                    type: object
+                    description: The updated continent object.
+        '400':
+          description: Bad request.
+        '404':
+          description: Continent not found.
+        '500':
+          description: Internal server error.
