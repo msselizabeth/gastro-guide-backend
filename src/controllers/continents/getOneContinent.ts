@@ -45,10 +45,9 @@ export const getOneContinent = async (req: Request, res: Response) => {
   const result = {
     continentName: continent.continentName[lang],
     heroImage: continent.heroImage,
-    planetIcon: continent.planetIcon,
     continentIcon: continent.continentIcon,
     ingredients,
-    features
+    features,
   };
 
   res.json(result);

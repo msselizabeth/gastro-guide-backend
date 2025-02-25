@@ -12,28 +12,32 @@ export const getContinents = async (req: Request, res: Response) => {
   const result = continents.map(
     ({
       continentName,
+      backImage,
       heroImage,
       planetIcon,
       _id,
       continentIcon,
       ingredients,
       features,
+      shortDescription
     }) => {
       
       return {
         id: _id,
         continentName: continentName[lang],
-        heroImage,
+        // heroImage,
         planetIcon,
+        backImage,
         continentIcon,
-        ingredients,
-        features: features.map(({ featureName, featureDescription, featureImage }) => {
-          return {
-            featureName: featureName[lang],
-            featureDescription: featureDescription[lang],
-            featureImage
-          }
-        })
+        // ingredients,
+        // features: features.map(({ featureName, featureDescription, featureImage }) => {
+        //   return {
+        //     featureName: featureName[lang],
+        //     featureDescription: featureDescription[lang],
+        //     featureImage
+        //   }
+        // }),
+        shortDescription: shortDescription[lang],
       };
     }
   );

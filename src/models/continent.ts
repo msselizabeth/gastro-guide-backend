@@ -8,13 +8,20 @@ interface Feature {
     featureDescription: Lang;
 }
 
+interface ShortDescription {
+    en: string[],
+    uk: string[]
+}
+
 interface Continent extends Document {
     continentName: Lang,
     heroImage: string,
     planetIcon: string,
     continentIcon: string,
+    backImage: string,
     ingredients: Schema.Types.ObjectId[],
-    features: Feature[];
+    features: Feature[],
+    shortDescription: ShortDescription,
 }
 
 const featureContinentSchema = new Schema({
@@ -36,11 +43,18 @@ const continentSchema = new Schema({
     continentIcon: {
         type: String,
     },
+    backImage: {
+        type: String,
+    },
     ingredients: {
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient'
     },
     features: [featureContinentSchema],
+    shortDescription: {
+        en: [String],
+        uk: [String]
+    }
 }, { versionKey: false, timestamps: true });
 
 export default mongoose.model<Continent>('Continent', continentSchema);
