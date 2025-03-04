@@ -15,8 +15,8 @@ export const getOneContinent = async (req: Request, res: Response) => {
   if (!lang) {
     throw HttpError(400, "Invalid language parameter");
   }
-  const { id } = req.params;
-  const continent = await Continent.findById(id).populate(
+  const { slug } = req.params;
+  const continent = await Continent.findOne({slug}).populate(
     "ingredients",
     "name image"
   );
